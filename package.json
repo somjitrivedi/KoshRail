@@ -1,0 +1,60 @@
+{
+  "name": "koshrail",
+  "version": "0.1.0",
+  "private": true,
+  "description": "KoshRail - core banking and UPI-style payment switch built as TypeScript microservices",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "workspaces": [
+    "packages/*",
+    "services/*"
+  ],
+  "scripts": {
+    "dev": "tsx scripts/dev.ts",
+    "seed": "tsx scripts/seed.ts",
+    "reset": "tsx scripts/reset.ts",
+    "typecheck": "tsc -p tsconfig.json",
+    "lint": "oxlint packages services scripts tests",
+    "test": "vitest run",
+    "test:e2e": "vitest run -c vitest.e2e.config.ts",
+    "gate:0": "tsx scripts/gate.ts 0",
+    "gate:1": "tsx scripts/gate.ts 1",
+    "gate:2": "tsx scripts/gate.ts 2",
+    "gate:3": "tsx scripts/gate.ts 3",
+    "gate:4": "tsx scripts/gate.ts 4",
+    "gate:5.1": "tsx scripts/gate.ts 5.1",
+    "gate:5.2": "tsx scripts/gate.ts 5.2",
+    "gate:5.3": "tsx scripts/gate.ts 5.3",
+    "gate:5.4": "tsx scripts/gate.ts 5.4",
+    "gate:5.5": "tsx scripts/gate.ts 5.5",
+    "gate:5": "tsx scripts/gate.ts 5",
+    "sim:switch": "vitest run services/switch-service/test/simulation.test.ts",
+    "load:switch": "tsx scripts/load-switch.ts"
+  },
+  "dependencies": {
+    "better-sqlite3": "12.11.1",
+    "express": "5.3.0",
+    "jsonwebtoken": "9.0.3",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "9.6.0",
+    "@types/express": "5.0.6",
+    "@types/jsonwebtoken": "9.0.10",
+    "@types/node": "22.20.5",
+    "@types/supertest": "7.2.1",
+    "fast-check": "4.10.2",
+    "oxlint": "1.93.0",
+    "supertest": "7.3.2",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "vitest": "3.2.4"
+  },
+  "allowScripts": {
+    "better-sqlite3@12.11.1": true,
+    "esbuild@0.28.2": true
+  }
+}

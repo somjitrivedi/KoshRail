@@ -1,0 +1,15 @@
+node_modules/
+data/
+.tmp/
+*.db
+*.db-wal
+*.db-shm
+*.log
+.env
+.env.*
+coverage/
+dist/
+*.tsbuildinfo
+*.zip
+.DS_Store
+Thumbs.db
